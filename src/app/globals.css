@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    height: 1000px;
+}
+.navbar {
+    @apply flex flex-col fixed w-full bg-white  top-0;
+}
+
+.navbar.active {
+    @apply bg-opacity-85 z-[9999];
+    box-shadow: inset 0 -1px 0 .3px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.burger {
+    @apply w-[30px] h-[2px] bg-black;
+}
+
+.burger-active > span:nth-child(1) {
+    @apply rotate-45;
+}
+.burger-active > span:nth-child(2) {
+    @apply scale-0;
+}
+.burger-active > span:nth-child(3) {
+    @apply -rotate-45;
+}
