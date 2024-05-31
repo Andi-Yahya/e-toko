@@ -1,10 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
-import { resolve } from "path";
 // , { cache: "no-store" }
 const getProducts = async () => {
     await new Promise((resolve) => setTimeout(resolve, 2000));
-    const res = await fetch("https://fakestoreapi.com/products?limit=6");
+    const res = await fetch("https://fakestoreapi.com/products?limit=9", { cache: "no-store" });
     if (!res.ok) {
         // This will activate the closest `error.js` Error Boundary
         throw new Error("Failed to fetch data");
@@ -26,18 +24,17 @@ const truncate = (str: string, n: number) => {
 };
 const ProductCard = async () => {
     const datas: datas = await getProducts();
-    {
-        /* <Image width="100" height="100" src={data.image} alt="data.title" /> */
-    }
 
     return (
         <div className="flex flex-row gap-10 container mt-16 flex-wrap justify-center items-center">
             {datas.map((data, id) => (
-                <div key={id} className="max-w-[300px] bg-white border border-gray-200 rounded-lg shadow  " >
+                <div key={id} className="max-w-[300px] bg-white border border-gray-200 rounded-lg shadow  ">
                     <Link href="#" className="flex justify-center items-center">
                         <div
                             className="bg-center bg-contain bg-no-repeat w-full h-44"
-                            style={{ backgroundImage: `url(${data.image})` }}
+                            style={{
+                                backgroundImage: `url(${data.image})`,
+                            }}
                         ></div>
                     </Link>
                     <div className="p-5">

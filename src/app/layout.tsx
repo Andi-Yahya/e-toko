@@ -21,9 +21,11 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={inter.className}>
-                <NavBar />
-                <Providers>{children}</Providers>
-                <FooterComponent/>
+                <div>
+                    <NavBar />
+                    <Providers>{children}</Providers>
+                    <FooterComponent />
+                </div>
             </body>
         </html>
     );

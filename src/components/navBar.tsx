@@ -33,7 +33,11 @@ const NavBar = () => {
                 />
                 <Text className="hidden lg:block">Kategori</Text>
                 <div className="relative  lg:flex-grow  ">
-                    <div onClick={hamburgerClicked} ref={refNav} className=" flex flex-col gap-2 md:hidden md:flex-none">
+                    <div
+                        onClick={hamburgerClicked}
+                        ref={refNav}
+                        className=" flex flex-col gap-2 md:hidden md:flex-none"
+                    >
                         <span className="burger origin-top-left transform duration-150"></span>
                         <span className="burger transform duration-150"></span>
                         <span className="burger origin-bottom-left transform duration-150"></span>
@@ -44,7 +48,11 @@ const NavBar = () => {
                                 <InputLeftAddon>
                                     <BiSearch size={"1.5em"} />
                                 </InputLeftAddon>
-                                <Input className="hidden sm:block outline-none w-full p-[7px]" type="tel" placeholder="Seacrh..." />
+                                <Input
+                                    className="hidden sm:block outline-none w-full p-[7px]"
+                                    type="tel"
+                                    placeholder="Seacrh..."
+                                />
                             </InputGroup>
                             <div className="sm:order-3  md:flex-row md:flex  gap-2">
                                 <button>

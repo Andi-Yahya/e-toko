@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+/* body {
     height: 1000px;
-}
+} */
 .navbar {
     @apply flex flex-col fixed w-full bg-white  top-0;
 }
